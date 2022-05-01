@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hsxkpasswd -c /home/asaligrama/.config/hsxkpasswd/hsxkpasswd.conf 2>/dev/null | xclip -r -selection c

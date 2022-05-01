@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# TODO USB-C monitors
+
+# ThinkPad X1 Carbon Gen 9; 14 inch 1920x1200
+export INTERNAL_MONITOR="eDP-1"
+
+if [ `xrandr | grep "HDMI-1" | grep -c ' connected '` -eq 1 ]; then
+	# Either an Acer 22 inch 1920x1080 monitor or an LG 27 inch 3840x2160 monitor
+	export EXTERNAL_MONITOR="HDMI-1"
+	exec ~/.config/polybar/launch_monitor.sh
+elif [ `xrandr | grep "DP-2" | grep -c ' connected '` -eq 1 ]; then
+	# ASUS MB16ACE 1920x1080 portable monitor
+	export EXTERNAL_MONITOR="DP-2"
+	exec ~/.config/polybar/launch_portable_monitor.sh
+elif [ `xrandr | grep "DP-3" | grep -c ' connected '` -eq 1 ]; then
+	# ASUS MB16ACE 1920x1080 portable monitor
+	export EXTERNAL_MONITOR="DP-3"
+	exec ~/.config/polybar/launch_portable_monitor.sh
+else
+	exec ~/.config/polybar/launch.sh
+fi
