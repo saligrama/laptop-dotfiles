@@ -9,7 +9,7 @@
 
 ## Font for window titles. Will also be used by the bar unless a different font
 ## is used in the bar {} block below.
-font pango: Noto Sans 12
+font pango: Source Sans 3 13
 
 ## This font is widely installed, provides lots of unicode glyphs, right-to-left
 ## text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -46,16 +46,16 @@ set_from_resource $base0E color14
 set_from_resource $base0F color15
 
 # wallpaper
-set $wall /home/asaligrama/Pictures/bay-sunset-unsplash.jpg
+set $wall /home/asaligrama/Pictures/sorepiss-fall-unsplash.jpg
 
 ####################################################################################################
 # Containers
 ##############
 
-## class						border		bg			text    	indicator	child_border
-client.focused				$base00 	$base04 	$base00 	$base00
+## class			border		bg		text    	indicator	child_border
+client.focused			$base00 	$base04 	$base00 	$base00
 client.focused_inactive		$base06 	$base07 	$base00 	$base00
-client.unfocused			$base00 	$base00 	$base07 	$base00
+client.unfocused		$base00 	$base00 	$base07 	$base00
 client.urgent_workspace		$base06 	$base08 	$base07 	$base08
 #client.placeholder
 
@@ -220,7 +220,7 @@ bindsym $mod+h split h
 bindsym $mod+l exec multilockscreen -l dimblur
 # bindsym $mod+l exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 # bindsym $mod+m
-# bindsym $mod+o
+bindsym $mod+o exec "polybar-msg cmd toggle"
 #bindsym $mod+p exec POL_IgnoreWineErrors=True playonlinux --run Photoshop
 bindsym $mod+p exec /usr/local/bin/polybar-monitors
 bindsym $mod+q kill
@@ -455,7 +455,6 @@ new_window pixel 1
 new_float pixel 2
 
 # hide_edge_borders both
-
 
 ####################################################################################################
 # i3bar

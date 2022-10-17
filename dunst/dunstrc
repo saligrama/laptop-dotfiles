@@ -1,5 +1,5 @@
 [global]
-    font = "Fira Code Retina 15"
+    font = "Iosevka Saligrama Extended 15"
     allow_markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes
@@ -29,7 +29,7 @@
 
 [frame]
     width = 4
-    color = "#d3869b"
+    color = "#df69ba"
 
 [shortcuts]
     close = ctrl+space
@@ -38,18 +38,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#32302f"
-    foreground = "#fbf1c7"
+    background = "#fff9e8"
+    foreground = "#5c6a72"
     timeout = 6
 
 [urgency_normal]
-    background = "#32302f"
-    foreground = "#fbf1c7"
+    background = "#fff9e8"
+    foreground = "#5c6a72"
     timeout = 8
 
 [urgency_critical]
-    background = "#32302f"
-    foreground = "#fbf1c7"
+    background = "#fff9e8"
+    foreground = "#5c6a72"
     timeout = 10
 
 

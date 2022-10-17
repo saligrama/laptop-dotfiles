@@ -22,7 +22,7 @@ spacing = 0
 padding-left = 1
 padding-right = 1
 
-font-0 = Fira Code Retina:size=12;3
+font-0 = Iosevka Saligrama Extended:size=12;3
 font-1 = Font Awesome 6 Free Regular:size=12;2
 font-2 = Font Awesome 6 Free Solid:size=12;2
 font-3 = Font Awesome 6 Brands:size=12;3
@@ -31,7 +31,7 @@ font-5 = DejaVu Sans:size=16;3
 
 modules-center = i3
 modules-right = wireless-network battery pulseaudio date
-modules-left = discord spotify weather pkg
+modules-left = weather discord spotify pkg
 
 ;tray-position = left
 ;tray-background = ${xrdb:background}

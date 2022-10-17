@@ -1,9 +1,10 @@
 #!/bin/bash
 
-wal --theme base16-gruvbox-soft -l -o ~/.config/dunst/launchdunst.sh
-gsettings set org.gnome.desktop.interface gtk-theme "Arc"
+wal --theme everforest-dark-hard -o ~/.config/dunst/launchdunst.sh
+gsettings set org.gnome.desktop.interface gtk-theme "Orchis-Green-Dark-Compact"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 killall DiscordCanary
 i3-msg "Workspace 3; exec discord-canary"
-sed -i 's/light/dark/g' ~/.config/rofi/config.rasi
-sed -i 's/Dark/Light/g' ~/.config/Code/User/settings.json
-sed -i 's/set background=dark/set background=light/g' ~/.vimrc
+sed -i 's/dark/light/g' ~/.config/rofi/config.rasi
+sed -i 's/Light/Dark/g' ~/.config/Code/User/settings.json
+sed -i 's/set background=light/set background=dark/g' ~/.vimrc
