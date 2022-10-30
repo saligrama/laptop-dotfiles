@@ -31,7 +31,7 @@ font-5 = DejaVu Sans:size=16;3
 
 modules-center = i3
 modules-right = wireless-network battery pulseaudio date
-modules-left = discord spotify weather pkg
+modules-left = yubikey discord spotify weather pkg
 
 ;tray-position = left
 ;tray-background = ${xrdb:background}
@@ -239,3 +239,11 @@ type = custom/script
 interval = 10
 format = <label>
 exec = ~/.config/polybar/mail 2> /dev/null
+
+[module/yubikey]
+type = custom/script
+
+exec = "ncat --unixsock $XDG_RUNTIME_DIR/yubikey-touch-detector.socket | while read -n5 message; do [[ $message = *1 ]] && echo '' || echo ''; done"
+tail = true
+
+format-foreground = ${xrdb:color1}
