@@ -7,7 +7,7 @@ source "$HOME/.cache/wal/colors.sh"
 
 check=$((pac + aur))
 if [[ "$check" != "0" ]]; then
-    echo "%{B$color9}%{F$background} $pac  $aur "
+    echo "%{B$color9} $pac  $aur "
 else
     echo ""
     exit

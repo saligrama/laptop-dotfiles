@@ -3,7 +3,6 @@ import sys, requests, json, re, time
 import pywal
 
 colors = pywal.colors.file("/home/asaligrama/.cache/wal/colors.json")["colors"]
-special = pywal.colors.file("/home/asaligrama/.cache/wal/colors.json")["special"]
 
 f = open("/home/asaligrama/.openweather", "r")
 api_key = f.readline().strip()
@@ -49,6 +48,4 @@ elif temp > 60.0 and temp <= 80.0:
 else:
     color = colors["color1"]
 
-foreground = special["background"]
-
-print(f"%{{B{color}}}%{{F{foreground}}}  {icon} {str(int(round(temp, 0)))} °F  ")
+print(f"%{{B{color}}}  {icon} {str(int(round(temp, 0)))} °F  ")

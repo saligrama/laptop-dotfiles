@@ -11,7 +11,7 @@ monitor = ${env:INTERNAL_MONITOR}
 fixed-center = true
 
 background = #00000000
-foreground = ${xrdb:foreground}
+foreground = ${xrdb:background}
 
 locale = en_US.UTF-8
 
@@ -53,7 +53,7 @@ monitor = ${env:INTERNAL_MONITOR}
 fixed-center = true
 
 background = #00000000
-foreground = ${xrdb:foreground}
+foreground = ${xrdb:background}
 
 locale = en_US.UTF-8
 
@@ -85,7 +85,6 @@ format-padding = 2
 type = internal/date
 format = <date>
 date = %a %l:%M %p
-format-foreground = ${xrdb:background}
 format-background = ${xrdb:color3}
 format-prefix =  
 format-prefix-padding-right = 1
@@ -124,9 +123,6 @@ format-full-prefix-padding-right = 1
 format-full-background = ${xrdb:color2}
 format-charging-background = ${xrdb:color2}
 format-discharging-background = ${xrdb:color1}
-format-full-foreground = ${xrdb:background}
-format-charging-foreground = ${xrdb:background}
-format-discharging-foreground = ${xrdb:background}
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
@@ -201,8 +197,6 @@ label-muted = %percentage%%
 label-volume = %percentage%%
 format-muted-background = ${xrdb:color13}
 format-volume-background = ${xrdb:color5}
-format-muted-foreground = ${xrdb:background}
-format-volume-foreground = ${xrdb:background}
 
 [module/wireless-network]
 type = internal/network
@@ -217,8 +211,6 @@ format-connected-prefix = 蠟
 format-disconnected-prefix = 浪
 format-connected-prefix-padding-right = 1
 format-disconnected-prefix-padding-right = 1
-format-connected-foreground = ${xrdb:background}
-format-disconnected-foreground = ${xrdb:background}
 format-connected-background = ${xrdb:color6}
 format-disconnected-background = ${xrdb:color5}
 
@@ -243,9 +235,6 @@ interval = 1
 
 [module/yubikey]
 type = custom/script
-
 exec = "ncat --unixsock $XDG_RUNTIME_DIR/yubikey-touch-detector.socket | while read -n5 message; do [[ $message = *1 ]] && echo '' || echo ''; done"
 tail = true
-
 format-background = ${xrdb:color1}
-format-foreground = ${xrdb:background}

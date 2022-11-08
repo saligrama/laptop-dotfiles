@@ -7,7 +7,7 @@ source "$HOME/.cache/wal/colors.sh"
 
 discord_status=$(cat /home/asaligrama/.config/dunst/discord_notifs.txt)
 if [[ "$discord_status" != "0" ]]; then
-    echo "%{B$color12}%{F$background}   $discord_status  "
+    echo "%{B$color12}   $discord_status  "
 else
     echo ""
 fi
