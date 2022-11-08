@@ -2,11 +2,12 @@
 import sys, requests, json, re, time
 import pywal
 
-colors = pywal.colors.file('/home/asaligrama/.cache/wal/colors.json')['colors']
+colors = pywal.colors.file("/home/asaligrama/.cache/wal/colors.json")["colors"]
+special = pywal.colors.file("/home/asaligrama/.cache/wal/colors.json")["special"]
 
-f = open('/home/asaligrama/.openweather', 'r')
+f = open("/home/asaligrama/.openweather", "r")
 api_key = f.readline().strip()
-latlon = f.readline().strip().split(',')
+latlon = f.readline().strip().split(",")
 
 url = f"https://api.openweathermap.org/data/2.5/onecall?lat={latlon[0]}&lon={latlon[1]}&appid={api_key}&units=imperial"
 
@@ -19,28 +20,35 @@ except:
 
 icon = ""
 descr = data["current"]["weather"][0]["id"]
-if descr == 800 or descr == 801 or descr == 802: # clear or partly cloudy
-    if int(time.time()) > data["current"]["sunrise"] and int(time.time()) < data["current"]["sunset"]:
+if descr == 800 or descr == 801 or descr == 802:  # clear or partly cloudy
+    if (
+        int(time.time()) > data["current"]["sunrise"]
+        and int(time.time()) < data["current"]["sunset"]
+    ):
         icon = ""
     else:
         icon = ""
-elif descr >= 600 and descr < 700: # snow
+elif descr >= 600 and descr < 700:  # snow
     icon = ""
-elif descr >= 200 and descr < 600: # rain (various intensity)
+elif descr >= 200 and descr < 600:  # rain (various intensity)
     icon = ""
-elif (descr >= 601 and descr < 800) or descr == 803 or descr == 804: # clouds/atmospheric
+elif (
+    (descr >= 601 and descr < 800) or descr == 803 or descr == 804
+):  # clouds/atmospheric
     icon = ""
 
 temp = data["current"]["temp"]
 color = ""
 
-if (temp <= 45.0):
-    color = colors['color13']
-elif (temp > 45.0 and temp <= 60.0):
-    color = colors['color6']
-elif (temp > 60.0 and temp <= 80.0):
-    color = colors['color2']
+if temp <= 45.0:
+    color = colors["color13"]
+elif temp > 45.0 and temp <= 60.0:
+    color = colors["color6"]
+elif temp > 60.0 and temp <= 80.0:
+    color = colors["color2"]
 else:
-    color = colors['color1']
+    color = colors["color1"]
 
-print("%{F" + color + "}" + icon + " " + str(int(round(temp, 0))) + "°F")
+foreground = special["background"]
+
+print(f"%{{B{color}}}%{{F{foreground}}}  {icon} {str(int(round(temp, 0)))} °F  ")
