@@ -176,6 +176,7 @@ label-unfocused-padding = 2
 label-unfocused-foreground = ${xrdb:foreground}
 
 label-visible = %icon%
+label-visible-foreground = ${xrdb:foreground}
 label-visible-padding = 2
 
 label-urgent = %icon%
