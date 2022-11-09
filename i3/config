@@ -46,7 +46,7 @@ set_from_resource $base0E color14
 set_from_resource $base0F color15
 
 # wallpaper
-set $wall /home/asaligrama/Pictures/sorepiss-fall-unsplash.jpg
+set $wall /home/asaligrama/Pictures/sorapiss-fall-unsplash.jpg
 
 ####################################################################################################
 # Containers
@@ -217,7 +217,7 @@ bindsym $mod+g exec gcolor2
 bindsym $mod+h split h
 # bindsym $mod+i
 # bindsym $mod+j
-bindsym $mod+l exec multilockscreen -l dimblur
+bindsym $mod+l exec betterlockscreen -l dimblur
 # bindsym $mod+l exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 # bindsym $mod+m
 bindsym $mod+o exec "polybar-msg cmd toggle"
@@ -496,7 +496,7 @@ gaps outer 5
 
 # exec $HOME/.config/sxhkd/launch.sh
 exec --no-startup-id wal -R
-exec --no-startup-id multilockscreen -u $wall
+exec --no-startup-id betterlockscreen -u $wall
 exec --no-startup-id gnome-flashback
 exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-fill $wall
@@ -507,5 +507,5 @@ exec --no-startup-id /usr/bin/gnome-screensaver
 exec --no-startup-id /usr/local/bin/polybar-monitors
 exec_always --no-startup-id $HOME/.config/i3/discord_clear.py
 exec --no-startup-id sudo fusuma
-exec --no-startup-id xss-lock -- /usr/bin/multilockscreen -l dimblur
+exec --no-startup-id xss-lock -- /usr/bin/betterlockscreen -l dimblur
 exec --no-startup-id fc-cache -r
