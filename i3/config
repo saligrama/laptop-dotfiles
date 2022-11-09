@@ -217,7 +217,7 @@ bindsym $mod+g exec gcolor2
 bindsym $mod+h split h
 # bindsym $mod+i
 # bindsym $mod+j
-bindsym $mod+l exec betterlockscreen -l dimblur
+bindsym $mod+l exec /usr/local/bin/lock
 # bindsym $mod+l exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
 # bindsym $mod+m
 bindsym $mod+o exec "polybar-msg cmd toggle"
@@ -507,5 +507,5 @@ exec --no-startup-id /usr/bin/gnome-screensaver
 exec --no-startup-id /usr/local/bin/polybar-monitors
 exec_always --no-startup-id $HOME/.config/i3/discord_clear.py
 exec --no-startup-id sudo fusuma
-exec --no-startup-id xss-lock -- /usr/bin/betterlockscreen -l dimblur
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /usr/local/bin/lock
 exec --no-startup-id fc-cache -r

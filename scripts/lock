@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export XSECURELOCK_SAVER_FONT="Source Sans Pro"
+export XSECURELOCK_SAVER_IMAGE=~/.cache/betterlockscreen/current/wall_dimblur.png
+export XSECURELOCK_COMPOSITE_OBSCURER=0
+export XSECURELOCK_FONT="Source Sans Pro"
+export XSECURELOCK_SAVER=/usr/local/bin/securelock-saver.py
+
+thisPid=$$
+xsecurelock &
+lock=$!
+
+# loop until $lock is gone, or fingerprint is verified
+until ! kill -0 $lock || fprintd-verify; do
+    echo "FAILURE"
+done
+
+#kill the pid for the lock and thisPid
+kill $lock
+kill $thisPid
