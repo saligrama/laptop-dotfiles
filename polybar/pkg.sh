@@ -1,6 +1,6 @@
 #!/bin/bash
 pac=$(checkupdates | wc -l)
-aur=$(yay -Qua | wc -l)
+aur=$(yay -Qqua | wc -l)
 #aur="0"
 
 source "$HOME/.cache/wal/colors.sh"
